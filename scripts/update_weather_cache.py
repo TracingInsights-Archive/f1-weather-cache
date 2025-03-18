@@ -42,14 +42,25 @@ async def fetch_weather_data(session, latitude, longitude):
 
     # Construct API URL with 15-minute intervals and additional parameters
     url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&minutely_15=temperature_2m,weathercode,precipitation_probability,precipitation,windspeed_10m,windgusts_10m,visibility,relativehumidity_2m,apparent_temperature,cloudcover,winddirection_10m&timezone=auto&start_date={today}&end_date={end_date}"
-
-    try:
-        # Make API request with timeout and retry logic
+     try:
+            # Make API request with timeout and retry logic
         for attempt in range(3):  # Try up to 3 times
             try:
                 async with session.get(url, timeout=10) as response:
                     if response.status == 200:
                         data = await response.json()
+                        
+                        # Ensure all required fields exist with default values if missing
+                        if 'minutely_15' in data:
+                            for field in ['precipitation_probability', 'cloudcover', 'precipitation']:
+                                if field not in data['minutely_15'] or not data['minutely_15'][field]:
+                                    data['minutely_15'][field] = [0] * len(data['minutely_15']['time'])
+                        
+                        if 'hourly' in data:
+                            for field in ['precipitation_probability', 'cloudcover', 'precipitation']:
+                                if field not in data['hourly'] or not data['hourly'][field]:
+                                    data['hourly'][field] = [0] * len(data['hourly']['time'])
+                        
                         return data
                     elif response.status == 429:  # Rate limit
                         wait_time = 2 ** attempt  # Exponential backoff
