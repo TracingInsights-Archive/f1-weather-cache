@@ -6,7 +6,7 @@ import aiohttp
 from datetime import datetime, timedelta
 import time
 
-# List of F1 circuit coordinates from your data
+# List of F1 circuit coordinates
 CIRCUIT_COORDINATES = [
     (-37.8373, 144.9666),  # Melbourne
     (31.3807, 121.2498),   # Shanghai
@@ -33,11 +33,6 @@ CIRCUIT_COORDINATES = [
     (25.490292, 51.45303), # Doha
     (24.4821, 54.3482),    # Yas Marina
 ]
-
-def ensure_directory_exists(directory):
-    """Ensure the specified directory exists."""
-    if not os.path.exists(directory):
-        os.makedirs(directory)
 
 async def fetch_weather_data(session, latitude, longitude):
     """Fetch weather data for the given coordinates asynchronously."""
@@ -78,7 +73,8 @@ async def main():
     
     # Ensure data directory exists
     data_dir = "data"
-    ensure_directory_exists(data_dir)
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
     
     # Set up async session with connection pooling
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(limit=5)) as session:
