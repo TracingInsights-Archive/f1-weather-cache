@@ -42,7 +42,7 @@ async def fetch_weather_data(session, latitude, longitude):
 
     # Construct API URL with 15-minute intervals and additional parameters
     url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&minutely_15=temperature_2m,weathercode,precipitation_probability,precipitation,windspeed_10m,windgusts_10m,visibility,relativehumidity_2m,apparent_temperature,cloudcover,winddirection_10m&timezone=auto&start_date={today}&end_date={end_date}"
-     try:
+    try:
             # Make API request with timeout and retry logic
         for attempt in range(3):  # Try up to 3 times
             try:
