@@ -40,26 +40,81 @@ async def fetch_weather_data(session, latitude, longitude):
     today = datetime.now().strftime('%Y-%m-%d')
     end_date = (datetime.now() + timedelta(days=14)).strftime('%Y-%m-%d')
 
-    # Construct API URL with 15-minute intervals and additional parameters
-    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&minutely_15=temperature_2m,weathercode,precipitation_probability,precipitation,windspeed_10m,windgusts_10m,visibility,relativehumidity_2m,apparent_temperature,cloudcover,winddirection_10m&timezone=auto&start_date={today}&end_date={end_date}"
+    # Construct API URL with both minutely_15 and hourly data for better coverage
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&minutely_15=temperature_2m,weathercode,precipitation_probability,precipitation,windspeed_10m,windgusts_10m,visibility,relativehumidity_2m,apparent_temperature,cloudcover,winddirection_10m&hourly=temperature_2m,weathercode,precipitation_probability,precipitation,windspeed_10m,windgusts_10m,visibility,relativehumidity_2m,apparent_temperature,cloudcover,winddirection_10m&timezone=auto&start_date={today}&end_date={end_date}"
+    
     try:
-            # Make API request with timeout and retry logic
+        # Make API request with timeout and retry logic
         for attempt in range(3):  # Try up to 3 times
             try:
                 async with session.get(url, timeout=10) as response:
                     if response.status == 200:
                         data = await response.json()
                         
-                        # Ensure all required fields exist with default values if missing
-                        if 'minutely_15' in data:
-                            for field in ['precipitation_probability', 'cloudcover', 'precipitation']:
-                                if field not in data['minutely_15'] or not data['minutely_15'][field]:
-                                    data['minutely_15'][field] = [0] * len(data['minutely_15']['time'])
+                        # Define all fields that need default values
+                        all_fields = [
+                            'temperature_2m', 'weathercode', 'precipitation_probability', 
+                            'precipitation', 'windspeed_10m', 'windgusts_10m', 'visibility',
+                            'relativehumidity_2m', 'apparent_temperature', 'cloudcover', 
+                            'winddirection_10m'
+                        ]
                         
+                        # Process minutely_15 data if available
+                        if 'minutely_15' in data:
+                            # Add a flag to indicate we have minutely data
+                            data['hasMinutelyData'] = True
+                            
+                            # Ensure all fields exist with default values
+                            for field in all_fields:
+                                if field not in data['minutely_15'] or not data['minutely_15'][field]:
+                                    # Set appropriate default values
+                                    default_value = 0
+                                    if field == 'visibility':
+                                        default_value = 10000  # 10km visibility
+                                    
+                                    data['minutely_15'][field] = [default_value] * len(data['minutely_15']['time'])
+                        else:
+                            data['hasMinutelyData'] = False
+                        
+                        # Process hourly data (always available)
                         if 'hourly' in data:
-                            for field in ['precipitation_probability', 'cloudcover', 'precipitation']:
+                            for field in all_fields:
                                 if field not in data['hourly'] or not data['hourly'][field]:
-                                    data['hourly'][field] = [0] * len(data['hourly']['time'])
+                                    # Set appropriate default values
+                                    default_value = 0
+                                    if field == 'visibility':
+                                        default_value = 10000  # 10km visibility
+                                    
+                                    data['hourly'][field] = [default_value] * len(data['hourly']['time'])
+                        
+                        # Interpolate missing data from hourly to minutely if needed
+                        if 'minutely_15' in data and 'hourly' in data:
+                            minutely_times = [datetime.fromisoformat(t.replace('Z', '+00:00')) for t in data['minutely_15']['time']]
+                            hourly_times = [datetime.fromisoformat(t.replace('Z', '+00:00')) for t in data['hourly']['time']]
+                            
+                            for field in all_fields:
+                                # Skip if minutely data is already complete
+                                if field in data['minutely_15'] and all(v is not None for v in data['minutely_15'][field]):
+                                    continue
+                                
+                                # If field is missing in minutely but present in hourly, interpolate
+                                if (field not in data['minutely_15'] or not data['minutely_15'][field]) and field in data['hourly']:
+                                    # Create a new array for interpolated values
+                                    interpolated = []
+                                    
+                                    for m_time in minutely_times:
+                                        # Find the closest hourly time points
+                                        closest_idx = min(range(len(hourly_times)), 
+                                                         key=lambda i: abs((hourly_times[i] - m_time).total_seconds()))
+                                        
+                                        # Use the closest hourly value
+                                        if closest_idx < len(data['hourly'][field]):
+                                            interpolated.append(data['hourly'][field][closest_idx])
+                                        else:
+                                            interpolated.append(0)  # Default if out of range
+                                    
+                                    # Update the minutely data with interpolated values
+                                    data['minutely_15'][field] = interpolated
                         
                         return data
                     elif response.status == 429:  # Rate limit
