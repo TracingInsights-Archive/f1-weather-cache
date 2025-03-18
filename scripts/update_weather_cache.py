@@ -39,10 +39,10 @@ async def fetch_weather_data(session, latitude, longitude):
     # Calculate date range (today + 14 days forecast)
     today = datetime.now().strftime('%Y-%m-%d')
     end_date = (datetime.now() + timedelta(days=14)).strftime('%Y-%m-%d')
-    
-    # Construct API URL
-    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&hourly=temperature_2m,weathercode,precipitation_probability,precipitation,windspeed_10m,windgusts_10m,visibility,relativehumidity_2m,apparent_temperature&timezone=auto&start_date={today}&end_date={end_date}"
-    
+
+    # Construct API URL with 15-minute intervals and additional parameters
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&minutely_15=temperature_2m,weathercode,precipitation_probability,precipitation,windspeed_10m,windgusts_10m,visibility,relativehumidity_2m,apparent_temperature,cloudcover,winddirection_10m&timezone=auto&start_date={today}&end_date={end_date}"
+
     try:
         # Make API request with timeout and retry logic
         for attempt in range(3):  # Try up to 3 times
@@ -61,7 +61,7 @@ async def fetch_weather_data(session, latitude, longitude):
             except (aiohttp.ClientError, asyncio.TimeoutError) as e:
                 print(f"Request error (attempt {attempt+1}/3): {e}")
                 await asyncio.sleep(1)
-        
+
         return None  # All attempts failed
     except Exception as e:
         print(f"Unexpected error for {latitude},{longitude}: {e}")
@@ -70,23 +70,23 @@ async def fetch_weather_data(session, latitude, longitude):
 async def main():
     """Main function to update weather cache asynchronously."""
     start_time = time.time()
-    
+
     # Ensure data directory exists
     data_dir = "data"
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
-    
+
     # Set up async session with connection pooling
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(limit=5)) as session:
         # Create tasks for all circuits
         tasks = []
         for lat, lon in CIRCUIT_COORDINATES:
             tasks.append(fetch_weather_data(session, lat, lon))
-        
+
         # Execute all tasks concurrently with progress reporting
         print(f"Fetching weather data for {len(tasks)} circuits...")
         results = await asyncio.gather(*tasks)
-        
+
         # Process results and save to files
         for (lat, lon), weather_data in zip(CIRCUIT_COORDINATES, results):
             if weather_data:
@@ -95,22 +95,22 @@ async def main():
                 lon_formatted = str(lon).replace('.', '_')
                 filename = f"{lat_formatted}_{lon_formatted}.json"
                 filepath = os.path.join(data_dir, filename)
-                
+
                 # Add metadata
                 weather_data['metadata'] = {
                     'cached_at': datetime.now().isoformat(),
                     'latitude': lat,
                     'longitude': lon
                 }
-                
+
                 # Save to file
                 with open(filepath, 'w') as f:
                     json.dump(weather_data, f, indent=2)
-                
+
                 print(f"Saved weather data for {lat}, {lon}")
             else:
                 print(f"Failed to fetch weather data for {lat}, {lon}")
-    
+
     elapsed_time = time.time() - start_time
     print(f"Weather cache update completed in {elapsed_time:.2f} seconds")
 
