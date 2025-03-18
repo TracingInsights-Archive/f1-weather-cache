@@ -2,7 +2,7 @@ name: Update Weather Cache
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours
+    - cron: '*/15 * * * *'  
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
