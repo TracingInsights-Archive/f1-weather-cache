@@ -1,7 +1,7 @@
 {
   "latitude": 43.74,
   "longitude": 7.4199996,
-  "generationtime_ms": 2.446770668029785,
+  "generationtime_ms": 3.0275583267211914,
   "utc_offset_seconds": 3600,
   "timezone": "Europe/Monaco",
   "timezone_abbreviation": "GMT+1",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-03-19T06:22:54.853970",
+    "cached_at": "2025-03-19T06:47:14.724206",
     "latitude": 43.7338,
     "longitude": 7.4215
   }
