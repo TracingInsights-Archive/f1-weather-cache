@@ -1,7 +1,7 @@
 {
   "latitude": 31.375,
   "longitude": 121.25,
-  "generationtime_ms": 1.1626482009887695,
+  "generationtime_ms": 1.0433197021484375,
   "utc_offset_seconds": 28800,
   "timezone": "Asia/Shanghai",
   "timezone_abbreviation": "GMT+8",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-03-20T07:35:30.606843",
+    "cached_at": "2025-03-20T07:49:48.656323",
     "latitude": 31.3807,
     "longitude": 121.2498
   }
