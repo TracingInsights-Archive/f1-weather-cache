@@ -1,7 +1,7 @@
 {
   "latitude": 41.5625,
   "longitude": 2.25,
-  "generationtime_ms": 1.5761852264404297,
+  "generationtime_ms": 1.5844106674194336,
   "utc_offset_seconds": 3600,
   "timezone": "Europe/Madrid",
   "timezone_abbreviation": "GMT+1",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-03-22T15:29:05.672890",
+    "cached_at": "2025-03-22T15:39:35.441536",
     "latitude": 41.5638,
     "longitude": 2.2585
   }
