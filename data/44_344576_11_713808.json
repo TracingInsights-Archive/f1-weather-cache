@@ -1,7 +1,7 @@
 {
   "latitude": 44.34,
   "longitude": 11.719999,
-  "generationtime_ms": 2.3761987686157227,
+  "generationtime_ms": 2.887248992919922,
   "utc_offset_seconds": 3600,
   "timezone": "Europe/Rome",
   "timezone_abbreviation": "GMT+1",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-03-25T08:44:18.324178",
+    "cached_at": "2025-03-25T08:54:42.663265",
     "latitude": 44.344576,
     "longitude": 11.713808
   }
