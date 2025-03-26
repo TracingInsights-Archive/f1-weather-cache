@@ -1,7 +1,7 @@
 {
   "latitude": 19.375,
   "longitude": -99.125,
-  "generationtime_ms": 1.1905431747436523,
+  "generationtime_ms": 1.2614727020263672,
   "utc_offset_seconds": -21600,
   "timezone": "America/Mexico_City",
   "timezone_abbreviation": "GMT-6",
@@ -5767,27 +5767,27 @@
       26,
       27,
       28,
-      29,
       30,
       31,
-      32,
-      33,
       33,
       34,
-      35,
       35,
       36,
       37,
       37,
       37,
-      38,
-      38,
-      38,
-      38,
-      38,
-      39,
-      39,
-      39
+      36,
+      34,
+      32,
+      29,
+      26,
+      22,
+      19,
+      15,
+      11,
+      8,
+      4,
+      2
     ],
     "precipitation": [
       0.0,
@@ -18783,11 +18783,11 @@
       16,
       21,
       26,
-      30,
-      33,
+      31,
       36,
-      38,
-      38
+      36,
+      26,
+      11
     ],
     "precipitation": [
       0.0,
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-03-26T04:51:22.360558",
+    "cached_at": "2025-03-26T05:16:01.677188",
     "latitude": 19.4028,
     "longitude": -99.0986
   }
