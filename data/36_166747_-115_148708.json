@@ -1,7 +1,7 @@
 {
   "latitude": 36.16438,
   "longitude": -115.14392,
-  "generationtime_ms": 3.347635269165039,
+  "generationtime_ms": 1.2258291244506836,
   "utc_offset_seconds": -25200,
   "timezone": "America/Los_Angeles",
   "timezone_abbreviation": "GMT-7",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-04-03T10:52:17.285275",
+    "cached_at": "2025-04-03T11:14:45.481392",
     "latitude": 36.166747,
     "longitude": -115.148708
   }
