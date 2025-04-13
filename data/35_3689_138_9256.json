@@ -1,7 +1,7 @@
 {
   "latitude": 35.35,
   "longitude": 138.9375,
-  "generationtime_ms": 2.512216567993164,
+  "generationtime_ms": 2.339959144592285,
   "utc_offset_seconds": 32400,
   "timezone": "Asia/Tokyo",
   "timezone_abbreviation": "GMT+9",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-04-13T11:12:28.762205",
+    "cached_at": "2025-04-13T11:25:13.273193",
     "latitude": 35.3689,
     "longitude": 138.9256
   }
