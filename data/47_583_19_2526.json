@@ -1,7 +1,7 @@
 {
   "latitude": 47.5759,
   "longitude": 19.252151,
-  "generationtime_ms": 2.6012659072875977,
+  "generationtime_ms": 3.0688047409057617,
   "utc_offset_seconds": 7200,
   "timezone": "Europe/Budapest",
   "timezone_abbreviation": "GMT+2",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-04-22T02:49:05.107441",
+    "cached_at": "2025-04-22T03:33:43.738444",
     "latitude": 47.583,
     "longitude": 19.2526
   }
