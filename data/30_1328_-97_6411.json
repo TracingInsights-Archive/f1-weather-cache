@@ -1,7 +1,7 @@
 {
   "latitude": 30.135847,
   "longitude": -97.629456,
-  "generationtime_ms": 1.0769367218017578,
+  "generationtime_ms": 1.4295578002929688,
   "utc_offset_seconds": -18000,
   "timezone": "America/Chicago",
   "timezone_abbreviation": "GMT-5",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-04-23T03:54:49.830254",
+    "cached_at": "2025-04-23T04:20:16.375208",
     "latitude": 30.1328,
     "longitude": -97.6411
   }
