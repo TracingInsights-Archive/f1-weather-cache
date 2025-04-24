@@ -1,7 +1,7 @@
 {
   "latitude": 26.125,
   "longitude": 50.5,
-  "generationtime_ms": 2.1120309829711914,
+  "generationtime_ms": 1.080632209777832,
   "utc_offset_seconds": 10800,
   "timezone": "Asia/Bahrain",
   "timezone_abbreviation": "GMT+3",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-04-24T21:49:55.317944",
+    "cached_at": "2025-04-24T22:16:52.868328",
     "latitude": 26.037,
     "longitude": 50.5112
   }
