@@ -1,7 +1,7 @@
 {
   "latitude": 21.5,
   "longitude": 39.200005,
-  "generationtime_ms": 1.6957521438598633,
+  "generationtime_ms": 1.6494989395141602,
   "utc_offset_seconds": 10800,
   "timezone": "Asia/Riyadh",
   "timezone_abbreviation": "GMT+3",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-04-29T15:41:03.514440",
+    "cached_at": "2025-04-29T15:50:55.261591",
     "latitude": 21.485811,
     "longitude": 39.192505
   }
