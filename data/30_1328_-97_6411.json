@@ -1,7 +1,7 @@
 {
   "latitude": 30.135847,
   "longitude": -97.629456,
-  "generationtime_ms": 1.3200044631958008,
+  "generationtime_ms": 1.1693239212036133,
   "utc_offset_seconds": -18000,
   "timezone": "America/Chicago",
   "timezone_abbreviation": "GMT-5",
@@ -5772,22 +5772,22 @@
       26,
       27,
       27,
-      27,
-      27,
-      28,
-      28,
-      28,
       28,
       29,
       29,
+      30,
+      30,
+      30,
+      30,
+      30,
       29,
-      29,
-      29,
-      29,
-      29,
-      29,
-      29,
-      29
+      28,
+      26,
+      24,
+      22,
+      19,
+      16,
+      13
     ],
     "precipitation": [
       0.0,
@@ -18784,10 +18784,10 @@
       24,
       25,
       26,
-      27,
       28,
+      30,
       29,
-      29
+      22
     ],
     "precipitation": [
       0.0,
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-04-30T04:56:32.596868",
+    "cached_at": "2025-04-30T05:19:30.543373",
     "latitude": 30.1328,
     "longitude": -97.6411
   }
