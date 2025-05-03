@@ -1,7 +1,7 @@
 {
   "latitude": 52.08,
   "longitude": -1.0200002,
-  "generationtime_ms": 2.753615379333496,
+  "generationtime_ms": 2.365589141845703,
   "utc_offset_seconds": 3600,
   "timezone": "Europe/London",
   "timezone_abbreviation": "GMT+1",
@@ -6029,10 +6029,10 @@
       0.0,
       0.0,
       0.0,
+      0.1,
       0.0,
-      0.0,
-      0.0,
-      0.0,
+      0.1,
+      0.4,
       0.0,
       0.0,
       0.0,
@@ -18850,8 +18850,8 @@
       0.0,
       0.0,
       0.0,
-      0.0,
-      0.0,
+      0.1,
+      0.5,
       0.0,
       0.0,
       0.0,
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-05-03T19:12:31.078685",
+    "cached_at": "2025-05-03T19:24:39.167610",
     "latitude": 52.0706,
     "longitude": -1.0174
   }
