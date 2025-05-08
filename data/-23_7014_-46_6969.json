@@ -1,7 +1,7 @@
 {
   "latitude": -23.75,
   "longitude": -46.75,
-  "generationtime_ms": 1.5944242477416992,
+  "generationtime_ms": 1.1681318283081055,
   "utc_offset_seconds": -10800,
   "timezone": "America/Sao_Paulo",
   "timezone_abbreviation": "GMT-3",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-05-08T21:49:49.177587",
+    "cached_at": "2025-05-08T22:16:26.362801",
     "latitude": -23.7014,
     "longitude": -46.6969
   }
