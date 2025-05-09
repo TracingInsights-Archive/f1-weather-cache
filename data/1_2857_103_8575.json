@@ -1,7 +1,7 @@
 {
   "latitude": 1.375,
   "longitude": 103.875,
-  "generationtime_ms": 1.2111663818359375,
+  "generationtime_ms": 1.9179582595825195,
   "utc_offset_seconds": 28800,
   "timezone": "Asia/Singapore",
   "timezone_abbreviation": "GMT+8",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-05-09T04:52:27.923072",
+    "cached_at": "2025-05-09T05:17:16.704364",
     "latitude": 1.2857,
     "longitude": 103.8575
   }
