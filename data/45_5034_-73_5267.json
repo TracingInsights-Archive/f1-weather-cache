@@ -1,7 +1,7 @@
 {
   "latitude": 45.511124,
   "longitude": -73.51429,
-  "generationtime_ms": 1.2938976287841797,
+  "generationtime_ms": 1.3473033905029297,
   "utc_offset_seconds": -14400,
   "timezone": "America/Toronto",
   "timezone_abbreviation": "GMT-4",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-05-12T07:38:45.523845",
+    "cached_at": "2025-05-12T07:49:48.749158",
     "latitude": 45.5034,
     "longitude": -73.5267
   }
