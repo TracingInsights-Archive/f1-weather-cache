@@ -1,7 +1,7 @@
 {
   "latitude": 24.375,
   "longitude": 54.5,
-  "generationtime_ms": 1.0858774185180664,
+  "generationtime_ms": 1.1430978775024414,
   "utc_offset_seconds": 14400,
   "timezone": "Asia/Dubai",
   "timezone_abbreviation": "GMT+4",
@@ -4169,9 +4169,9 @@
       0,
       0,
       0,
-      0,
-      0,
-      0,
+      95,
+      95,
+      95,
       0,
       0,
       0,
@@ -18382,7 +18382,7 @@
       0,
       0,
       0,
-      0,
+      95,
       0,
       0,
       0,
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-05-14T07:49:43.721916",
+    "cached_at": "2025-05-14T08:23:20.775522",
     "latitude": 24.4821,
     "longitude": 54.3482
   }
