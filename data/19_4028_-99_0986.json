@@ -1,7 +1,7 @@
 {
   "latitude": 19.375,
   "longitude": -99.125,
-  "generationtime_ms": 1.3808012008666992,
+  "generationtime_ms": 1.172780990600586,
   "utc_offset_seconds": -21600,
   "timezone": "America/Mexico_City",
   "timezone_abbreviation": "GMT-6",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-05-15T20:51:42.788663",
+    "cached_at": "2025-05-15T21:16:16.909428",
     "latitude": 19.4028,
     "longitude": -99.0986
   }
