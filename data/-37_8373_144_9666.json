@@ -1,7 +1,7 @@
 {
   "latitude": -37.75,
   "longitude": 144.875,
-  "generationtime_ms": 2.473592758178711,
+  "generationtime_ms": 2.158999443054199,
   "utc_offset_seconds": 36000,
   "timezone": "Australia/Melbourne",
   "timezone_abbreviation": "GMT+10",
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-06-14T07:36:51.140299",
+    "cached_at": "2025-06-14T07:49:59.282384",
     "latitude": -37.8373,
     "longitude": 144.9666
   }
