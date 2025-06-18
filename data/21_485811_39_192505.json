@@ -1,7 +1,7 @@
 {
   "latitude": 21.5,
   "longitude": 39.200005,
-  "generationtime_ms": 3.5828351974487305,
+  "generationtime_ms": 2.4639368057250977,
   "utc_offset_seconds": 10800,
   "timezone": "Asia/Riyadh",
   "timezone_abbreviation": "GMT+3",
@@ -5780,14 +5780,14 @@
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2
     ],
     "precipitation": [
       0.0,
@@ -18786,8 +18786,8 @@
       0,
       0,
       0,
-      0,
-      0
+      1,
+      1
     ],
     "precipitation": [
       0.0,
@@ -21688,7 +21688,7 @@
   },
   "hasMinutelyData": true,
   "metadata": {
-    "cached_at": "2025-06-18T01:24:20.028044",
+    "cached_at": "2025-06-18T03:04:11.302806",
     "latitude": 21.485811,
     "longitude": 39.192505
   }
